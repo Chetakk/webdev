@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Website</title>
+</head>
+<h1>Hello World</h1>
+<p>this is a paragraph</p>
+
+
+<div class="Button">
+    <button Style="color:brown">Lets Start</button>
+
+</div>
+<div class="Anchor Tag">
+    <h3>Achor Tag</h3>
+    <!--anchor tag-->
+        <!--to apen link-->
+            <!--absolute url(link of other websites)-->
+            <a href="google.com">google</a>
+            <br/><!--to go to next line-->
+        <!--relative url(our website in same folder)-->
+            <a href="/hello.html">go to hello</a><!--opens this to go to new page-->
+        
+        <p>to open links in new tab we target main</p>
+            <a
+            href="https://vtop.vit.ac.in/vtop/login" target="_main">VTOP</a>
+
+    <br/><hr>
+</div>
+
+<div class="Image tag">
+    <h3>Image Tag</h3>
+    <pre>  Absolute Url Image                       Relative Image</pre>
+    <!--image tag-->
+        <!--to show images -->
+        <!--absolute url-->
+            <a href="https://th.bing.com/th/id/OIP.YxvEw4Wl6-91Y0v8ntxuMwHaEK?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+            <img
+            src = "https://th.bing.com/th/id/OIP.YxvEw4Wl6-91Y0v8ntxuMwHaEK?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            alt = "deku"
+            height="100"
+            />
+            Deku(clickable image)
+            </a>
+        <!--relative url-->
+            <img
+            src="/luffy.png"
+            height="100"
+            />
+            Luffy <3(non clickable image)    
+    <br><hr>
+</div>
+
+<div>
+<hr>
+    <!--Div tag-->
+    <h3>Div Tag</h3>
+    <div>
+        (Container used for other HTML elements)
+        <pre>
+            Block 1
+            hello
+            hii
+            namaste
+    </pre>
+    </div>
+
+    <div>
+        <pre>
+            Block 2
+            bye
+            see you 
+            auf weidersen
+        </pre>
+    </div>
+
+
+</div>
+
+<hr>   
+<div>
+    
+    <!--Span tag-->
+    <span>
+    <p>span is same as div but we define our space</p>
+    <!--we define our own space that we need-->
+    </span>
+</div>
+<hr>
+
+<br>
+<div class="list">
+    <p>unordered list</p>
+    <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+    </ul>
+    <p>ordered list</p>
+    <ol>
+        <li>Apple</li>
+        <li>Mango</li>
+    </ol>
+</div>
+
+<hr>
+<div class="tables">
+        <hr>
+        <p>tables</p>
+        <p>-  tr (table row) tag</p>
+
+        <p>-  td (table data) tag</p>
+        <td></td>
+
+        <p>- th (table header) tag</p>
+        <th colspan ="2">TABLE</th>
+        <!--merging one column for two rows-->
+        <table>
+            <caption>
+                Student Details
+            </caption>
+            <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Roll No.
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                    Chetak
+                </td>
+                <td>
+                    0105
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Krishna
+                </td>
+                <td>
+                    00048
+                </td>
+            </tr>
+            </tbody>
+        </table>
+             
+ 
+
+
+</div>
+
+<hr><hr>
+<div class="form">
+    <p>Form tag</p>
+    <h3>Registration Form</h3>
+    <form action="/action.php">
+
+        <input type="text"placeholder="Type Your Name"><br>
+        <input type="password"placeholder="Type Your Password">
+
+        <br><br>
+        Select Your Class<br>
+        <label for="101">
+        <input type="radio" value ="class XI" name="class" id="101">Class XI
+        </label>
+        <label for="102">
+        <input type="radio" value ="class XII" name="class" id="102">Class XII
+        </label>
+        <label for="103">       <!--labels can make the text the part of button-->
+        <input type="radio" value="Under Grad" name="class" id="103">UG
+        </label>
+        <br><br>
+
+        Select Your Subjects<br>
+        <label fpr="201">
+            <input type="checkbox" value="sub1" name="sub" id="201">Maths
+        </label>
+        <label fpr="202"></label>
+            <input type="checkbox" value="sub2" name="sub" id="202">Physics
+        </label>
+        <label fpr="203"></label>
+            <input type="checkbox" value="sub3" name="sub" id="203">Chemistry
+        </label>
+        <label fpr="204"></label>
+            <input type="checkbox" value="sub4" name="sub" id="204">Computer Science
+        </label>
+        <br><br>
+        Select Your State<br>
+        <select name="city">
+            <option value="Delhi">Delhi</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="TN">Tamil Nadu</option>
+            <option value="WB">West Bengal</option>
+        </select>
+
+        <br><br>
+        <textarea name="feedback" id="301" placeholder="please give your valuable feedback here" rows="5" cols="50"></textarea>
+        <br>
+        <input type="submit" value="submit">
+
+        
+    </form>
+
+</div>
+
+<div id="id1" class="group1"></div>
+<div id="id2" class="group2"></div>
+
+
+<div class="formatting">
+<hr><hr>
+    <h4>Formatting tags</h4>
+    <!--formatting tags-->
+        <!--bold tag-->
+            <b>this show big texts</b>
+            <br>
+        <!--italic-->
+            <i>this shows italic</i>
+            <br>
+        <!--underline-->
+            <u>this underlines texts</u>
+            <br>
+        <!--big-->
+            <big>this shows big</big>
+            <br>
+        <!--small-->
+            <small>this shows small tags</small>
+        
+        <h4>Subscript and Superscipt tags</h4>
+        <!--subscript & superscript tags-->
+            <!--sub-->
+                <p>H<sub>2</sub>O</p>
+            <!--super-->
+                <p>3<sup>2</sup>= 9</p>
+        
+        <!--pre-->
+            <!--html doesnot count spaces and nextline-->
+            <!--text counting spaces and nextline-->
+            <pre>
+            <h4>Pre tag</h4>
+                hii
+                wassup
+                my name is chetak
+            </pre>
+
+         <!--sprating tags-->
+            <!--separate by line-->
+                <br>
+            <!--horizonatal rular-->
+                <hr>
+
+</div>
+
+<div class="layouts">
+<hr>
+    <h4>Layouts</h4>
+    <header>My page(header)</header><br>
+    <main>
+        (Main)
+        <section>
+            Section part to devide website in sections
+        </section><br>
+        <article>
+            Acticle is to write tags
+        </article><br>
+        <aside>
+            Aside is to write anything aside tags(like ads)
+        </aside><br>
+    </main><br>
+    <footer>
+        contact me  @chetakmahato@gmail.com(footer)
+    </footer>
+    <hr><hr>
+</div> 
+
+<div class="video">
+    My Video<br>
+    <video width="560" height="315" src="vod.mkv" controls loop ></video>
+</div>
+
+<div class="iframe"> 
+    <p>The refrence video using iframe</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/HcOc7P5BMi4?si=zR418RtwNjfXsWw1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br><br>
+    <iframe width="600" height="400" src="https://en.wikipedia.org/wiki/HTML"></iframe>
+</div> 
+
+    </body>
+</html>
+
