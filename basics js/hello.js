@@ -1,3 +1,6 @@
-function printCurrentPage() {
-    window.print("Hello World");
-    }
+function sayMyName(){
+    console.log("Chetak")
+}
+
+// sayMyName()
+
