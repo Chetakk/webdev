@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Form with All Validations</title>
+    <script>
+        function validateForm() {
+            // Validate Name (from original doc)
+            var name = document.myForm.fname.value;
+            if (!validateName(name)) {
+                return false;
+            }
+
+            // Validate Mobile (from original doc)
+            var mobile = document.myForm.nmo.value;
+            if (!validateMobile(mobile)) {
+                return false;
+            }
+
+            // Validate Gender (Radio Button)
+            var gender = document.myForm.gender;
+            if (!validateGender(gender)) {
+                return false;
+            }
+
+            // Validate Electives (Checkboxes - Select 2)
+            var electives = document.myForm.course;
+            if (!validateElectives(electives)) {
+                return false;
+            }
+
+            // Validate Country (Single Select)
+            var country = document.myForm.country;
+            if (!validateCountry(country)) {
+                return false;
+            }
+
+            // Validate Courses (Multiple Select)
+            var courses = document.myForm.multiCourse;
+            if (!validateCourses(courses)) {
+                return false;
+            }
+
+            return true; // Form will submit if all validations pass
+        }
+
+        // Name Validation (from original doc)
+        function validateName(name) {
+            if (name.length == 0) {
+                alert("Name must be filled out");
+                return false;
+            }
+            document.getElementById("outtab").rows[1].cells[1].innerHTML = name;
+            return true;
+        }
+
+        // Mobile Validation (from original doc)
+        function validateMobile(mobile) {
+            var mobilePattern = /\d{10}/; // Regex to check 10 digits
+            if (!mobile.match(mobilePattern)) {
+                alert("Mobile number must be 10 digits");
+                return false;
+            }
+            document.getElementById("outtab").rows[2].cells[1].innerHTML = mobile;
+            return true;
+        }
+
+        // Gender Validation (Radio Button)
+        function validateGender(gender) {
+            var isSelected = false;
+            for (var i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    isSelected = true;
+                    document.getElementById("outtab").rows[3].cells[1].innerHTML = gender[i].value;
+                    break;
+                }
+            }
+            if (!isSelected) {
+                alert("Please select your gender");
+                return false;
+            }
+            return true;
+        }
+
+        // Electives Validation (Checkboxes - Select 2)
+        function validateElectives(electives) {
+            var selectedCount = 0;
+            var selectedElectives = [];
+            for (var i = 0; i < electives.length; i++) {
+                if (electives[i].checked) {
+                    selectedCount++;
+                    selectedElectives.push(electives[i].value);
+                }
+            }
+            if (selectedCount < 2) {
+                alert("Please select at least 2 electives");
+                return false;
+            }
+            // Display selected electives in the output table
+            document.getElementById("outtab").rows[4].cells[1].innerHTML = selectedElectives.join(", ");
+            return true;
+        }
+
+        // Country Validation (Single Select)
+        function validateCountry(country) {
+            if (country.selectedIndex <= 0) {
+                alert("Please select a country");
+                return false;
+            }
+            document.getElementById("outtab").rows[5].cells[1].innerHTML = country.options[country.selectedIndex].text;
+            return true;
+        }
+
+        // Courses Validation (Multiple Select)
+        function validateCourses(courses) {
+            var selectedCount = 0;
+            var selectedCourses = [];
+            for (var i = 0; i < courses.options.length; i++) {
+                if (courses.options[i].selected) {
+                    selectedCount++;
+                    selectedCourses.push(courses.options[i].text);
+                }
+            }
+            if (selectedCount < 2) {
+                alert("Please select at least 2 courses");
+                return false;
+            }
+            document.getElementById("outtab").rows[6].cells[1].innerHTML = selectedCourses.join(", ");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Complete Registration Form</h2>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        <!-- Name Field -->
+        Name: <input type="text" name="fname"><br><br>
+
+        <!-- Mobile Field -->
+        Mobile: <input type="text" name="nmo"><br><br>
+
+        <!-- Gender Radio Buttons -->
+        Gender:
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br><br>
+
+        <!-- Electives Checkboxes -->
+        Select 2 Electives:<br>
+        <input type="checkbox" name="course" value="Cloud Computing"> Cloud Computing<br>
+        <input type="checkbox" name="course" value="Data Analytics"> Data Analytics<br>
+        <input type="checkbox" name="course" value="Big Data"> Big Data<br>
+        <input type="checkbox" name="course" value="Cryptography"> Cryptography<br><br>
+
+        <!-- Country Single Select -->
+        Country:
+        <select name="country">
+            <option value="">- Select -</option>
+            <option value="IN">India</option>
+            <option value="US">USA</option>
+            <option value="UK">UK</option>
+        </select><br><br>
+
+        <!-- Courses Multiple Select -->
+        Select 2+ Courses:
+        <select name="multiCourse" multiple size="4">
+            <option value="Web">Web Development</option>
+            <option value="Mobile">Mobile Development</option>
+            <option value="AI">Artificial Intelligence</option>
+            <option value="IOT">Internet of Things</option>
+        </select><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Output Table -->
+    <h3>Form Output</h3>
+    <table id="outtab" border="2" bordercolor="blue">
+        <tr><td colspan="2">FORM OUTPUT</td></tr>
+        <tr><td>Name</td><td></td></tr>
+        <tr><td>Mobile</td><td></td></tr>
+        <tr><td>Gender</td><td></td></tr>
+        <tr><td>Electives</td><td></td></tr>
+        <tr><td>Country</td><td></td></tr>
+        <tr><td>Courses</td><td></td></tr>
+    </table>
+</body>
+</html>
